@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Members club</title>
+</head>
+<body>
+<style>
+
+    .welcome-text {
+        display: flex;
+        justify-content: center;
+    }
+    table {
+        width: 100%;
+    }
+    table, td {
+        table-layout: fixed;
+        border-collapse: collapse;
+        border: 1px solid black;
+}
+</style>
+    <div class="welcome-text">
+        <h1>Welcome to the club</h1>
+    </div>
+    <div class="new-member-form">
+        <h2>New member</h2>
+        <form action="/main" method="post">
+            <p>Name:</p>
+            <input type="text" name="name">
+            <p>Email:</p>
+            <input type="text" name="email">
+            <br>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+
+    <table>
+        <tr>
+            <td>#</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Registration date</td>
+        </tr>
+        <tr th:each="member : ${members}" >
+            <td th:text="${member.id}"></td>
+            <td th:text="${member.name}"></td>
+            <td th:text="${member.email}"></td>
+            <td th:text="${member.registrationDate}"></td>
+        </tr>
+    </table>
+</body>
+</html>
