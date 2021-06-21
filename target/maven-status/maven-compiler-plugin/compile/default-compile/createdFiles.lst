@@ -1,0 +1,4 @@
+com/club/test/controller/MemberController.class
+com/club/test/Application.class
+com/club/test/exception/MemberWithSuchEmailExistsException.class
+com/club/test/model/Member.class
